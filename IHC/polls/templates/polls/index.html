@@ -1,0 +1,10 @@
+{% if choices %}
+    <div>Question: {{ question.question_text }}</div>
+    <ul>
+    {% for choice in choices %}
+    <li><a href="{% url 'polls:detail' question.id %}">{{ choice.choice_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
